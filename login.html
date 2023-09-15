@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="icon" href="img/icons.ico">
+</head>
+<body class="text-center">
+  <main class="mt-5">
+    <div class="circle-container">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+    </div>
+    <div class="container">
+
+      <div class="login-container row">
+        <div class="col col1">
+          <img src="img/login-logo.png" alt="" class="cover-img2">
+        </div>
+
+        <div class="col col2">
+          <img src="img/login-img.png" alt="" class="cover-img3">
+          <p>Inicia sesion</p>
+
+          <div class="input-container">
+            <input type="email" name="correo" id="email" class="login-input" placeholder="Correo electronico">
+            <div class="circulo">
+              <img src="img/mail.png" alt="" class="login-icon">
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input type="password" name="password" id="password" class="login-input" placeholder="Contrasena">
+            <div class="circulo">
+              <img src="img/password.png" alt="" class="login-icon">
+            </div>
+          </div>
+
+          <input type="submit" value="Inicia sesion" class="login-submit" id="boton-iniciar-sesion">
+        </div>
+      </div>
+      <!-- Alerts -->
+      <div class="alert alert-success alert-dismissible fade" role="alert" id="alert-success">
+        <p>Se ingreso correctamente</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
+        <p>Complete los datos para iniciar sesion. *Recuerde que la contraseña debe ser mayor a 5 dígitos.</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-email-danger">
+        <p>Debe ingresar un correo válido</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+
+
+    </div>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

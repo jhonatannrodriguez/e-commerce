@@ -1,2 +1,2 @@
-# e-commerce
-Proyecto grupal (grupo 3)
+# ProyectoGrupo3
+Éste es el repositorio grupal
