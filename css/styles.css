@@ -307,32 +307,30 @@ height: 75vh;
 }
 
 .heartbtn{
-  color: white;
-  opacity: 50%;
-  position: absolute;
-  margin-left: 51.1%;
-  margin-top: 1%;
-  margin-bottom: 80%;
+  color: rgb(255, 255, 255);
+  opacity: 80%;
   font-size: 150%;
   background-color: transparent;
   border: none;
 }
 
 .heartbtn:hover{
-  color: #fff;
+  color: #e4e4e4;
   opacity: 100%;
 }
 
 .heartbtnok{
   color: red;
   opacity: 100%;
-  position: absolute;
-  margin-left: 51.1%;
   font-size: 150%; 
 }
 
 .zoom:active{
   width: 100%;
+}
+
+#heart {
+  text-shadow: 0 0 3px #000;
 }
 
 
@@ -344,6 +342,13 @@ height: 75vh;
 hr{
   color: rgb(99, 30, 5);
 }
+
+#profile-menu{
+ color: white;
+ border: none;
+}
+
+
 
 /* Animacion de circulo de fondo */
 

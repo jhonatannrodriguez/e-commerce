@@ -141,10 +141,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
-function userNavbar(){
-    let usuario = document.getElementById("categoriesUser");
-    const storedData = JSON.parse(sessionStorage.datos);
-    usuario.innerHTML += 
-    `<a class="nav-link" href="index.html">${storedData.email}</a>`
-}
-userNavbar()
+

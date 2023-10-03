@@ -3,7 +3,7 @@ const URL =
   "https://japceibal.github.io/emercado-api/cats_products/" +
   localStorage.getItem("catID") +
   ".json";
-const storedData = JSON.parse(sessionStorage.datos);
+const storedData = JSON.parse(localStorage.datos);
 const listContainer = document.getElementsByClassName("list-container");
 const btnMinMax = document.getElementById("minMax");
 const btnMaxMin = document.getElementById("maxMin");
@@ -143,11 +143,6 @@ function showData(dataArray) {
         `;
   }
 }
-function userNavbar() {
-  let usuario = document.getElementById("productsUser");
-  usuario.innerHTML += `<a class="nav-link" href="index.html">${storedData.email}</a>`;
-}
-userNavbar();
 
 function setProductsId(id){
      localStorage.setItem("idProd", id);
