@@ -1,10 +1,3 @@
-// Función que muestra la alerta cuando el comentario no cumple los requisitos
-function showAlertWarning() {
-  document.getElementById("alert-warning").classList.add("show");
-  setTimeout(() => {
-    document.getElementById("alert-warning").classList.remove("show");
-  }, 1000);
-}
 
 
 // Url que llama al JSON de los comentarios de cada producto
@@ -13,13 +6,11 @@ const URLCOM =
   localStorage.getItem("idProd") +
   ".json";
 
-
 // Url que llama al JSON de las categorias
 const URL =
   "https://japceibal.github.io/emercado-api/cats_products/" +
   localStorage.getItem("catID") +
   ".json";
-
 
 //Url de info de productos
 const URLPROD =
@@ -28,7 +19,6 @@ const URLPROD =
   ".json";
 
 const products = document.getElementById("productInfo");
-
 
 // Funcion que muestra la informacion del producto en el div de productos
 function productsInfo(item) {
@@ -74,7 +64,7 @@ function productsInfo(item) {
             <strong>Cantidad de Vendidos</strong>
             <p>${item.soldCount}</p>
             <button class="btn btn-primary">Comprar<i></i></button>
-            <button class="btn btn-dark">
+            <button class="btn btn-dark" id = "cartBtn">
               Agregar
               <i class="fas fa-shopping-cart"></i>
             </button>
@@ -85,11 +75,18 @@ function productsInfo(item) {
     `;
 }
 
+// Función que muestra la alerta cuando el comentario no cumple los requisitos
+function showAlertWarning() {
+  document.getElementById("alert-warning").classList.add("show");
+  setTimeout(() => {
+    document.getElementById("alert-warning").classList.remove("show");
+  }, 1000);
+}
 
 // Genera las imágenes de la galería del producto
 function generateImages(item) {
-  let images = '';
-  
+  let images = "";
+
   for (let i = 0; i < item.images.length; i++) {
     images += `
       <div class="col-3 mt-1">
@@ -106,7 +103,6 @@ function generateImages(item) {
 
   return images;
 }
-
 
 // Funcion que cambia la imagen, segun la que toques
 function newImg(id, num) {
@@ -148,10 +144,9 @@ commentBtn.addEventListener("click", function (e) {
   let dateFormat =
     year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
 
-  const storedData = JSON.parse(sessionStorage.datos);
+  const storedData = JSON.parse(localStorage.datos);
   if (selectedValue != "Calificación" && comment.value != "") {
-    comments.innerHTML +=
-    `
+    comments.innerHTML += `
       <div class="comentado">
         <div>
           <p><strong>${storedData.email.split("@")[0]}</strong></p>
@@ -171,13 +166,11 @@ commentBtn.addEventListener("click", function (e) {
   }
 });
 
-
 // Guarda el id del producto en el localStorage
 function setProdId(id) {
   localStorage.setItem("idProd", id);
   window.location = "product-info.html";
 }
-
 
 const productsRelated = document.getElementById("related-products");
 
@@ -185,8 +178,7 @@ const productsRelated = document.getElementById("related-products");
 function showRelatedProducts(array) {
   let relatedProductsHTML = "";
   for (let i = 0; i < array.relatedProducts.length; i++) {
-    relatedProductsHTML +=
-    `
+    relatedProductsHTML += `
       <div class="col-md-2 img-thumbnail m-1" onclick="setProdId(${array.relatedProducts[i].id})">
         <a class="link-dark" href = "#">
           <img src= ${array.relatedProducts[i].image} class="img-fluid">
@@ -198,26 +190,56 @@ function showRelatedProducts(array) {
 
   productsRelated.innerHTML = relatedProductsHTML;
 }
-
+function showAlertWarning() {
+  document.getElementById("alert-warning").classList.add("show");
+  document.getElementById("alert-warning").classList.remove("d-none");
+  setTimeout(function () {
+    document.getElementById("alert-warning").classList.add("d-none");
+  }, 1500);
+}
 
 // Funcion que cambia el color del icono de favoritos, cuando le damos click
 function favorite() {
   document.getElementById("heartbtn").classList.toggle("heartbtnok");
 }
 
-
 const idProducto = localStorage.getItem("idProd");
 
-// Funcion que trae la informacion del JSON sobre el producto que seleccionamos
 async function getJsonData(url) {
   const response = await fetch(url);
   const data = await response.json();
   productsInfo(data);
   showRelatedProducts(data);
+
+  const btnCart = document.getElementById("cartBtn");
+
+  let listCart = JSON.parse(localStorage.getItem("list")) || [];
+
+  btnCart.addEventListener("click", function () {
+    const objetoEncontrado = listCart.find((item) => item.id === data.id);
+    showAlertWarning();
+    if (objetoEncontrado) {
+      // El objeto existe en listCart, incrementa count para que no se repita el producto
+      objetoEncontrado.count++;
+    } else {
+      const obj = {
+        id: data.id,
+        name: data.name,
+        count: 1,
+        unitCost: data.cost,
+        currency: data.currency,
+        image: `img/prod${data.id}_1.jpg`,
+      };
+      listCart.push(obj);
+    }
+
+    // Guarda el arreglo en el almacenamiento
+    sessionStorage.setItem("list", JSON.stringify(listCart));
+    localStorage.setItem("list", JSON.stringify(listCart));
+  });
 }
 
 getJsonData(URLPROD);
-
 
 // Funcion que muestra los comentarios que vienen del JSON
 function nuevoCom(comments) {

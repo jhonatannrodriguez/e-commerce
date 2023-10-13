@@ -47,7 +47,9 @@ function userNavbar() {
   const storedData = JSON.parse(localStorage.datos);
   usuario[0].innerHTML +=
   `
+  
     <div class="btn-group">
+    
       <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="profile-menu">
         ${storedData.email.split("@")[0]}
       </button>

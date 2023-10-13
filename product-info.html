@@ -1,127 +1,117 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="light">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="icon" href="img/icons.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark p-1" id="navbar">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav w-100 justify-content-between">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-            </li>
-            <li class="nav-item navbarUser"></li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="container" id="productInfo"></div>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="icon" href="img/icons.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
 
-      <div class="container" id="comentarios">
-        <h5>Comentarios</h5>
-  
-        <div id="comText"></div>
-      </div>
-      <div class="container">
-        <form>
-          <hr />
-          <div class="form-group">
-            <h5>Comentar</h5>
-            <textarea rows="4" style="width: 55%" id="textComment" placeholder="Tu Opinion..."></textarea>
-          </div>
-          <div class="btn-group" role="group">
-            <select
-              class="form-select form-select-lg mb-1"
-              aria-label=".form-select-lg example"
-              id="calificacion">
-              <option selected disabled>Calificación</option>
-              <option value="1" class="cal">1</option>
-              <option value="2" class="cal">2</option>
-              <option value="3" class="cal">3</option>
-              <option value="4" class="cal">4</option>
-              <option value="5" class="cal">5</option> 
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary" id="commentbtn">
-            Enviar
-          </button>
-          <hr>
-        </form>
-         <div class="form-group">
-          <h5>Productos Relacionados</h5>
-        </div>
-        <div class="row" id="related-products">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark p-1" id="navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item navbarUser"></li>
+        </ul>
 
-        </div>
-      </div>
-      <div>
-       
-      </div>
-    </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>
-          Este sitio forma parte de
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
-            >Jovenes a Programar</a
-          >
-        </p>
-
-        <div class="alert alert-warning alert-dismissible fade" role="alert" id="alert-warning">
-          <p>Debe ingresar un comentario y una calificación para poder enviar.</p>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      </div>
-    </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/product-info.js"></script>
-  </body>
+  </nav>
+  <main>
+    <div class="container" id="productInfo">
+      <div class="alert alert-info alert-dismissible fade show d-none" role="alert" id="alert-warning">
+        <p>El producto fue agregado al carrito.</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class="container" id="comentarios">
+      <h5>Comentarios</h5>
+
+      <div id="comText"></div>
+    </div>
+    <div class="container">
+      <form>
+        <hr />
+        <div class="form-group">
+          <h5>Comentar</h5>
+          <textarea rows="4" style="width: 55%" id="textComment" placeholder="Tu Opinion..."></textarea>
+        </div>
+        <div class="btn-group" role="group">
+          <select class="form-select form-select-lg mb-1" aria-label=".form-select-lg example" id="calificacion">
+            <option selected disabled>Calificación</option>
+            <option value="1" class="cal">1</option>
+            <option value="2" class="cal">2</option>
+            <option value="3" class="cal">3</option>
+            <option value="4" class="cal">4</option>
+            <option value="5" class="cal">5</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" id="commentbtn">
+          Enviar
+        </button>
+        <hr>
+      </form>
+      <div class="form-group">
+        <h5>Productos Relacionados</h5>
+      </div>
+      <div class="row" id="related-products">
+
+      </div>
+    </div>
+    <div>
+
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>
+        Este sitio forma parte de
+        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+
+      <div class="alert alert-warning alert-dismissible fade" role="alert" id="alert-warning">
+        <p>Debe ingresar un comentario y una calificación para poder enviar.</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+</body>
+
 </html>
